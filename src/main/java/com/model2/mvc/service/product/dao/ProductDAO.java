@@ -90,15 +90,15 @@ public void insertProduct(Product product ) throws Exception {
 			//검색조건이 들어오면
 			if (search.getSearchCondition().equals("0")) {
 				//검색조건이 0번째의 검색조건에 해당하는 상품번호 이면
-				sql += " PROD_NO like'%" + search.getSearchKeyword()
+				sql += " vr.PROD_NO like '%" + search.getSearchKeyword()
 						+ "%' and";
 			} else if (search.getSearchCondition().equals("1")) {
 				//검색조건이 1번째의 검색조건에 해당하는 상품이름 이면
-				sql += " PROD_NAME like '%" + search.getSearchKeyword()
+				sql += " vr.PROD_NAME like '%" + search.getSearchKeyword()
 						+ "%' and";
 			} else if (search.getSearchCondition().equals("2")) {
 				//검색조건이 2번째의 검색조건에 해당하는 상품가격 이면
-				sql += " PRICE like '%" + search.getSearchKeyword()
+				sql += " vr.PRICE like '%" + search.getSearchKeyword()
 						+ "%' and";
 			}
 		}else
